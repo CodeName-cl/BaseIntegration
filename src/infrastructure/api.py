@@ -31,6 +31,7 @@ def process_order(order_data: dict):
     logging.info(f"Order {order_data} processed")
 
 
+# this is the webhook endpoint. It will be called by the origin platform.
 @app.post("/webhooks/order-create")
 async def receive_order_create_webhook(
     request: Request, background_tasks: BackgroundTasks
